@@ -13,11 +13,11 @@ const (
 
 func main() {
 
-	http.HandleFunc("/", server.GET)
-	http.HandleFunc("/get", server.GET)
-	http.HandleFunc("/put", server.PUT)
-	http.HandleFunc("/post", server.POST)
-	http.HandleFunc("/delete", server.DELETE)
+	http.HandleFunc("/", GET)
+	http.HandleFunc("/get", GET)
+	http.HandleFunc("/put", PUT)
+	http.HandleFunc("/post", POST)
+	http.HandleFunc("/delete", DELETE)
 
 	log.Fatal(http.ListenAndServe(fmt.Sprintf("%s:%d", defaultAddr, defaultPortNum), nil))
 }
