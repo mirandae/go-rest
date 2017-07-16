@@ -19,11 +19,11 @@ func main() {
 
 	response, err := restClient.Get(defaultURL)
 	if err != nil {
-
+		// TODO log
 	}
 	defer response.Body.Close()
 
-	ProcessGetResponse(response)
+	//err := ProcessGetResponse(response)
 
 	fmt.Printf("Response: %s", response.Body)
 }
