@@ -17,7 +17,13 @@ func main() {
 		Timeout: time.Second * 10,
 	}
 
-	response, _ := restClient.Get(defaultURL)
+	response, err := restClient.Get(defaultURL)
+	if err != nil {
+
+	}
+	defer response.Body.Close()
+
+	ProcessGetResponse(response)
 
 	fmt.Printf("Response: %s", response.Body)
 }
